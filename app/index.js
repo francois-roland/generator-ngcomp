@@ -22,7 +22,7 @@ var NgComponentGenerator = yeoman.generators.Base.extend({
       'basePath': this.options.basePath || 'app',
       'moduleName': this.options.moduleName || '',
       'filters': this.options.filters || ['uirouter', 'jasmine'],
-      'extensions': this.options.extensions || ['js', 'html', 'scss'],
+      'extensions': this.options.extensions || ['coffee', 'jade', 'scss'],
       'directiveSimpleTemplates': this.options.directiveSimple || '',
       'directiveComplexTemplates': this.options.directiveComplex || '',
       'filterTemplates': this.options.filter || '',
