@@ -1,16 +1,20 @@
-# generator-ng-component [![Build Status](https://secure.travis-ci.org/DaftMonk/generator-ng-component.png?branch=master)](https://travis-ci.org/DaftMonk/generator-ng-component)
+# generator-ngcomp
 
 > [Yeoman](http://yeoman.io) generator
 
 
-## Getting Started
+## About
+
+This is very much inspired on DaftMonk generator-ng-component, with improved js and coffee script templates for building an angular app
+
+see the original repo here : https://github.com/DaftMonk/generator-ng-component
 
 ### Yeoman Generators
 
-To install generator-ng-component from npm, run:
+To install generator-ngcomp from npm, run:
 
 ```
-$ npm install -g generator-ng-component
+$ npm install -g generator-ngcomp
 ```
 
 Finally, initiate the generator:

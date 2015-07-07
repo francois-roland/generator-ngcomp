@@ -1,14 +1,14 @@
 {
-  "name": "generator-ng-component",
-  "version": "0.0.10",
+  "name": "generator-ngComp",
+  "version": "0.0.1",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "DaftMonk/generator-ng-component",
+  "repository": "francois-roland/generator-ngcomp",
   "author": {
-    "name": "Tyler Henkel",
+    "name": "François Roland",
     "email": "",
-    "url": "https://github.com/DaftMonk"
+    "url": "https://github.com/francois-roland"
   },
   "engines": {
     "node": ">=0.10.0"
