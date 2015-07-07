@@ -1,5 +1,22 @@
 'use strict'
 
-angular.module '<%= scriptAppName %>'
-.service '<%= cameledName %>', ->
-  # AngularJS will instantiate a singleton by calling 'new' on this function
+(->
+
+  ### @ngInject ###
+
+  <%= cameledName %> = () ->
+    # Angular will call this using "new" on this function
+    {
+      someProp: 'this is a property'
+      someMethod: ()->
+        return 'this is a method'
+    }
+
+  <%= cameledName %>
+    .$inject = ['']
+
+  angular
+    .module '<%= scriptAppName %>'
+    .service '<%= cameledName %>',<%= cameledName %>
+
+)()

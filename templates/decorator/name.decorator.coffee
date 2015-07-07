@@ -1,7 +1,22 @@
 'use strict'
 
-angular.module '<%= scriptAppName %>'
-.config ($provide) ->
-  $provide.decorator '<%= cameledName %>', ($delegate) ->
-    # decorate the $delegate
+(->
+
+  ### @ngInject ###
+
+  <%= cameledName %> = ($delegate) ->
     $delegate
+
+  <%= cameledName %>.$inject = ['$delegate']
+
+  config = ($provide) ->
+    $provide.decorator <%= cameledName %>
+
+  config.$inject = ['$provide'];
+
+  angular
+    .module '<%= scriptAppName %>'
+    .config config
+
+
+)()

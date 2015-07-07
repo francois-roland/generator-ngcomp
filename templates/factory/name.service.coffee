@@ -1,12 +1,24 @@
 'use strict'
 
-angular.module '<%= scriptAppName %>'
-.factory '<%= cameledName %>', ->
+(->
 
-  # Service logic
-  # ...
-  meaningOfLife = 42
+  ### @ngInject ###
 
-  # Public API here
-  someMethod: ->
-    meaningOfLife
+  <%= cameledName %> = () ->
+
+    #inside logic
+    meaningOfLife = 42
+
+    #public API
+
+    someMethod: ->
+      meaningOfLife
+
+  <%= cameledName %>
+    .$inject = ['']
+
+  angular
+    .module '<%= scriptAppName %>'
+    .factory '<%= cameledName %>', <%= cameledName %>
+
+)()

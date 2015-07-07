@@ -1,10 +1,20 @@
 'use strict';
 
-angular.module('<%= scriptAppName %>')
-  .config(function ($routeProvider) {
+(function(){
+
+  /* ngInject */
+  var config = function ($routeProvider) {
     $routeProvider
       .when('<%= route %>', {
         templateUrl: '<%= htmlUrl %>',
-        controller: '<%= classedName %>Ctrl'
+        controller: '<%= classedName %>Ctrl as <%= classedName %>'
       });
-  });
+  };
+
+  config.$inject = ['$routeProvider'];
+
+  angular
+    .module('<%= scriptAppName %>')
+    .config(config);
+
+})();

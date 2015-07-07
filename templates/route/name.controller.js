@@ -1,6 +1,18 @@
 'use strict';
 
-angular.module('<%= scriptAppName %>')
-  .controller('<%= classedName %>Ctrl', function ($scope) {
-    $scope.message = 'Hello';
-  });
+(function(){
+
+  /* ngInject */
+  var <%= classedName%>Ctrl = function () {
+    vm = this;
+    vm.message = 'Hello there';
+  };
+
+  <%= classedName %>Ctrl
+    .$inject = [''];
+
+  angular
+    .module('<%= scriptAppName %>')
+    .controller('<%= classedName %>Ctrl',<%= classedName %>Ctrl);
+
+})();

@@ -1,5 +1,18 @@
 'use strict'
 
-angular.module '<%= scriptAppName %>'
-.controller '<%= classedName %>Ctrl', ($scope) ->
-  $scope.message = 'Hello'
+(->
+
+  ### @ngInject ###
+
+  <%= classedName %>Ctrl = () ->
+    vm = @
+    vm.message = 'Hello there'
+
+  <%= classedName %>Ctrl
+    .$inject = ['']
+
+  angular
+    .module '<%= scriptAppName %>'
+    .controller '<%= classedName %>Ctrl', <%= classedName %>Ctrl
+
+)()

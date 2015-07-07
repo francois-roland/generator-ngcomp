@@ -1,22 +1,42 @@
 'use strict'
 
-angular.module '<%= scriptAppName %>'
-.provider '<%= cameledName %>', ->
+(->
 
-  # Private variables
-  salutation = 'Hello'
+  ### @ngInject ###
 
-  # Private constructor
-  class Greeter
-    @greet = ->
-      salutation
+  <%= cameledName %>Provider = ($injector) ->
 
-  # Public API for configuration
-  @setSalutation = (s) ->
-    salutation = s
+    #private variables
+    salutation = 'hello'
 
-  # Method for instantiating
-  @$get = ->
-    new Greeter()
+    #private method
+    class Greeter
+      @greet = ->
+        console.log salutation
 
-  return
+    #public config api
+    @setSalutation = (s) ->
+      salutation = s
+
+    #instantiating method
+    @$get = ($injector) ->
+      #in a provider, you can't call other dependencies, except in the $get method, using the $injector service
+      $q = injector.get '$q'
+      defered = $q.defer()
+
+      defered.promise.then (response) ->
+        @setSalutation(response)
+        new Greeter()
+
+      defered.resolve 'Hello There !'
+
+    return
+
+  <%= cameledName %>
+    .$inject = ['$injector']
+
+  angular
+    .module '<%= scriptAppName %>'
+    .provider '<%= cameledName %>',<%= cameledName %>Provider
+
+)()

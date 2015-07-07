@@ -1,16 +1,28 @@
 'use strict';
 
-angular.module('<%= scriptAppName %>')
-  .factory('<%= cameledName %>', function () {
-    // Service logic
-    // ...
+(function(){
 
+  /* @ngInject */
+
+  var <%= cameledName %> = function() {
+
+    // inside logic
     var meaningOfLife = 42;
 
-    // Public API here
+    // public API
     return {
-      someMethod: function () {
+      someMethod: function() {
         return meaningOfLife;
       }
     };
-  });
+
+  };
+
+  <%= cameledName %>
+    .$inject = [''];
+
+  angular
+    .module('<%= scriptAppName %>')
+    .factory('<%= cameledName %>',<%= cameledName %>);
+
+})();

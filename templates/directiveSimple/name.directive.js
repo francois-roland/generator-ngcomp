@@ -1,12 +1,24 @@
 'use strict';
 
-angular.module('<%= scriptAppName %>')
-  .directive('<%= cameledName %>', function () {
+(function(){
+
+  /* @ngInject */
+
+  var <%= cameledName %> = function() {
     return {
       template: '<div></div>',
       restrict: 'EA',
       link: function (scope, element, attrs) {
-        element.text('this is the <%= cameledName %> directive');
+        console.log(scope, element, attrs);
       }
-    };
-  });
+    }
+  };
+
+  <%= cameledName %>
+    .$inject = [''];
+
+  angular
+    .module('<%= scriptAppName %>')
+    .directive('<%= cameledName %>',<%= cameledName %>);
+
+})();

@@ -1,6 +1,18 @@
 'use strict'
 
-angular.module '<%= scriptAppName %>'
-.filter '<%= cameledName %>', ->
-  (input) ->
-    '<%= cameledName %> filter: ' + input
+(->
+
+  ### @ngInject ###
+
+  <%= cameledName %> = () ->
+    (input) ->
+      '<%= cameledName %> filter: ' + input
+
+  <%= cameledName %>
+    .$inject = ['']
+
+  angular
+    .module '<%= scriptAppName %>'
+    .filter '<%= cameledName %>', <%= cameledName %>
+
+)()
