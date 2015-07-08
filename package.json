@@ -1,6 +1,6 @@
 {
   "name": "generator-ngcomp",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Yeoman generator to roll out angular components",
   "license": "MIT",
   "main": "app/index.js",
